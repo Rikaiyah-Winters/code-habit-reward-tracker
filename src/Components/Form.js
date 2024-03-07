@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import RewardInput from './RewardInput'
+
 function Form() {
+
+    const [page, setPage] = useState(0);
+    const [reward, setReward] = useState('');
+
+    const FormTitles = ["Reward Input", "Hours Coding", "Reward Output"];
+
+    const pageDisplay = () => {
+        if (page === 0) {
+            return <RewardInput />
+        } 
+    };
+
     return (
-        <div>
-            <div className='reward-input'>
-                <input placeholder='What do you desire?' onChange={e => setReward(e.target.value)}></input>
-                <button>Submit my Desire ❤️</button>
+        <div className='form'>
+            <div className='form-container'></div>
+            <div className='header'>
+                <h1>{FormTitles[page]}</h1>
             </div>
-            <div className='code-count-input'>
-                <h1>How many hours did you code today?</h1>
-                <button onClick={decrementCount}>-</button>
-                <span>{count}</span>
-                <button onClick={incrementCount}>+</button>
-            </div>
-            <div className='reward-output'>
-                <p>{reward}</p>
+            <div className='body'>{pageDisplay()}</div>
+            <div className='footer'>
+                <button
+                    disabled={page == 0}
+                    onClick={() => { setPage((currPage) => currPage - 1) }}>
+                    Prev
+                </button>
+                <button
+                    disabled={page == FormTitles.length - 1}
+                    onClick={() => { setPage((currPage) => currPage + 1) }}>
+                    Next
+                </button>
+                {/*If you have a FUNCTION INSIDE ONCLICK, it is set up like: () => {change of state - goes from current # to current + 1}*/}
             </div>
         </div>
-    )
+    );
 }
 
 export default Form
