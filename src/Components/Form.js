@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
-import RewardInput from './RewardInput'
+import RewardInput from './RewardInput';
+import HoursCoding from './HoursCoding';
+import RewardOutput from './RewardOutput'
 
 function Form() {
 
     const [page, setPage] = useState(0);
-    const [reward, setReward] = useState('');
+    //const [reward, setReward] = useState('');
 
     const FormTitles = ["Reward Input", "Hours Coding", "Reward Output"];
 
     const pageDisplay = () => {
         if (page === 0) {
             return <RewardInput />
-        } 
+        } else if (page === 1) {
+            return <HoursCoding />
+        } else {
+            return <RewardOutput />
+        }
     };
 
     return (
@@ -23,12 +29,12 @@ function Form() {
             <div className='body'>{pageDisplay()}</div>
             <div className='footer'>
                 <button
-                    disabled={page == 0}
+                    disabled={page === 0}
                     onClick={() => { setPage((currPage) => currPage - 1) }}>
                     Prev
                 </button>
                 <button
-                    disabled={page == FormTitles.length - 1}
+                    disabled={page === FormTitles.length - 1}
                     onClick={() => { setPage((currPage) => currPage + 1) }}>
                     Next
                 </button>

@@ -3,7 +3,7 @@ import React from 'react';
 function RewardOutput() {
     return (
         <div>
-            <p>{reward}</p>
+            <p>{/*{reward}*/}*Your reward!*</p>
         </div>
     )
 }

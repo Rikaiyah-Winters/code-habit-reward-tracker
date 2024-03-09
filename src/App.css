@@ -1,23 +1,15 @@
-/*.App {
+.App {
   text-align: center;
-  background: #ffc8dd;
-  justify-content: center;
-}
-
-input {
-  width: 150px;
-}
-
-.reward-input button {
-  width: 100px 300px;
+  background: #023e8a;
 }
 
 .reward-input {
-  display: flex;
-  flex-direction: column;
+  background: ;
 }
 
-button, 
-span {
-  font-size: 50px;
-}*/
+input {
+  padding: 10px 16px;
+  font-size: 1.5em;
+  margin: 20px 2px;
+  width: 90%;
+}
