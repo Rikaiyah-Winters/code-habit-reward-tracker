@@ -4,22 +4,40 @@ import HoursCoding from './HoursCoding';
 import RewardOutput from './RewardOutput'
 
 function Form() {
-    const [count, setCount] = useState(4);
+    //const [count, setCount] = useState(4);
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
-        materialRewardInput: "",
-        experienceRewardInput: "",
+        reward: "",
+        //experienceRewardInput: "",
         //hoursCodedInput: 0,
     });
 
-    function decrementCount() {
+    function addReward() {
+        const newReward = {
+            reward: "",
+        }
+
+        setFormData({ reward: [newSetData, ...reward]});
+    }
+
+    function onType(updatedValue) {
+        const updatedRewards = rewards.map((reward) => 
+            rewards.reward = updatedValue; //need to change the name of the object to "rewards or something"
+            return reward
+        );
+
+        setRewards({ rewards: updatedRewards})
+    }
+
+
+    /*function decrementCount() {
         setCount(prevCount => prevCount - 1) /*prevCount allows you to take prev count and  minus by one as oppoed to count - 1 where count is the number when we render the function, it doesn't change in the function like with prevCount*/
 
-    };
+    //};
 
-    function incrementCount() {
+    /*function incrementCount() {
         setCount(prevCount => prevCount + 1)
-    }
+    }*/
 
     const FormTitles = ["Reward Input", "Hours Coding", "Reward Output"];
 
@@ -29,11 +47,7 @@ function Form() {
             formData={formData} 
             setFormData={setFormData} />
         } else if (page === 1) {
-            return <HoursCoding 
-            decrementCount={decrementCount()} 
-            incrementCount={incrementCount()} 
-            count={count} 
-            setCount={setCount} />
+            return <HoursCoding />
         } else {
             return <RewardOutput />
         }

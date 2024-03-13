@@ -1,12 +1,12 @@
 import React from 'react';
 
-function HoursCoding(count, setCount, incrementCount, decrementCount) {
+function HoursCoding() {
     return (
         <div className='hours-coding'>
             <h1>How many hours did you code today?</h1>
-            <button onClick={decrementCount}>-</button>
-            <span>{count}</span>
-            <button onClick={incrementCount}>+</button>
+            <button >-</button>
+            <span>1</span>
+            <button >+</button>
         </div>
     )
 }
