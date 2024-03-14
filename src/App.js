@@ -4,12 +4,6 @@ import Form from "./Components/Form"
 
 function App() {
 
-
-  /*const [reward, setReward] = useState('');*/
-
-
-
-
   return (
     <div className="App">
       <Form />

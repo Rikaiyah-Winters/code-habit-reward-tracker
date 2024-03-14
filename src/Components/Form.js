@@ -6,28 +6,16 @@ import RewardOutput from './RewardOutput'
 function Form() {
     //const [count, setCount] = useState(4);
     const [page, setPage] = useState(0);
-    const [formData, setFormData] = useState({
-        reward: "",
-        //experienceRewardInput: "",
-        //hoursCodedInput: 0,
-    });
-
-    function addReward() {
-        const newReward = {
-            reward: "",
+    const [rewards, setRewards] = useState("");
+    const [list, setList] = useState([]);
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        const rewardIdeas = {rewards};
+        if (rewards) {
+            setList((ls)=> [...ls, rewardIdeas])
+            setRewards("");
         }
-
-        setFormData({ reward: [newSetData, ...reward]});
-    }
-
-    function onType(updatedValue) {
-        const updatedRewards = rewards.map((reward) => 
-            rewards.reward = updatedValue; //need to change the name of the object to "rewards or something"
-            return reward
-        );
-
-        setRewards({ rewards: updatedRewards})
-    }
+    };
 
 
     /*function decrementCount() {
@@ -44,8 +32,12 @@ function Form() {
     const pageDisplay = () => {
         if (page === 0) {
             return <RewardInput 
-            formData={formData} 
-            setFormData={setFormData} />
+            rewards={rewards} 
+            setRewards={setRewards} 
+            list={list} 
+            setList={setList} 
+            handleSubmit={handleSubmit}
+            />
         } else if (page === 1) {
             return <HoursCoding />
         } else {
