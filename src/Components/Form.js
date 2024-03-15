@@ -4,44 +4,66 @@ import HoursCoding from './HoursCoding';
 import RewardOutput from './RewardOutput'
 
 function Form() {
-    //const [count, setCount] = useState(4);
+    const [count, setCount] = useState(1);
     const [page, setPage] = useState(0);
     const [rewards, setRewards] = useState("");
     const [list, setList] = useState([]);
-    const handleSubmit=(e)=>{
+    const [finalReward, setFinalReward] = useState("");
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const rewardIdeas = {rewards};
+        const rewardIdeas = { rewards };
         if (rewards) {
-            setList((ls)=> [...ls, rewardIdeas])
+            setList((ls) => [...ls, rewardIdeas])
             setRewards("");
         }
     };
+    const randomReward = () => {
+        if (list) {
+            let randomIndex = Math.floor(Math.random() * list.length);
+            let finalRewardOutput = list[randomIndex];
+            setFinalReward(finalRewardOutput);
+        }
+    }; //append this to the function that says that if coding number is > 1, then move on to reward output
 
 
-    /*function decrementCount() {
+    const decrementCount = () => {
         setCount(prevCount => prevCount - 1) /*prevCount allows you to take prev count and  minus by one as oppoed to count - 1 where count is the number when we render the function, it doesn't change in the function like with prevCount*/
 
-    //};
+    };
 
-    /*function incrementCount() {
+    const incrementCount = () => {
         setCount(prevCount => prevCount + 1)
-    }*/
+    }
+
+    const showRewardOrNot = () => {
+        if (count < 1) {
+            alert("YOU NEED TO STUDY MORE!")
+        }
+    };
 
     const FormTitles = ["Reward Input", "Hours Coding", "Reward Output"];
 
     const pageDisplay = () => {
         if (page === 0) {
-            return <RewardInput 
-            rewards={rewards} 
-            setRewards={setRewards} 
-            list={list} 
-            setList={setList} 
-            handleSubmit={handleSubmit}
+            return <RewardInput
+                rewards={rewards}
+                setRewards={setRewards}
+                list={list}
+                setList={setList}
+                handleSubmit={handleSubmit}
             />
         } else if (page === 1) {
-            return <HoursCoding />
+            return <HoursCoding
+                decrementCount={decrementCount}
+                count={count}
+                incrementCount={incrementCount}
+            />
         } else {
-            return <RewardOutput />
+            return <RewardOutput
+                rewards={rewards}
+                list={list}
+                finalReward={finalReward}
+            />
         }
     };
 

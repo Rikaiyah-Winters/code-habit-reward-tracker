@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RewardInput({ rewards, setRewards, list, setList, handleSubmit }) {
+function RewardInput({ rewards, setRewards, list, handleSubmit }) {
 
     return (
         <div className='reward-input'>
@@ -11,15 +11,8 @@ function RewardInput({ rewards, setRewards, list, setList, handleSubmit }) {
                     value={rewards}
                     placeholder='1 material thing'
                     onChange={(e) => setRewards(e.target.value)} />
-                <button>Submit Reward Idea</button>
+                <button onClick={handleSubmit} disabled={list.length > 2}>Submit Reward Idea</button>
             </form>
-            {
-                list.map((a) => 
-                <div>
-                    <li>{a.rewards}</li>
-                </div>
-                )
-            }
         </div>
     )
 }

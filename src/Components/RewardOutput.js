@@ -1,9 +1,9 @@
 import React from 'react';
 
-function RewardOutput() {
+function RewardOutput({rewards, list, finalReward}) {
     return (
         <div>
-            <p>{/*{reward}*/}*Your reward!*</p>
+            <p>{finalReward}</p>
         </div>
     )
 }
