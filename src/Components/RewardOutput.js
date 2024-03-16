@@ -1,10 +1,15 @@
 import React from 'react';
 
-function RewardOutput({rewards, list, finalReward}) {
+function RewardOutput({ list, finalReward }) {
     return (
         <div>
-            <p>{finalReward}</p>
+            {
+                list.map((a) => <div>
+                    <li>{a.rewards}</li>
+                </div>)
+            }
         </div>
+
     )
 }
 

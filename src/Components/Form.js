@@ -9,6 +9,7 @@ function Form() {
     const [rewards, setRewards] = useState("");
     const [list, setList] = useState([]);
     const [finalReward, setFinalReward] = useState("");
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const rewardIdeas = { rewards };
@@ -17,14 +18,6 @@ function Form() {
             setRewards("");
         }
     };
-    const randomReward = () => {
-        if (list) {
-            let randomIndex = Math.floor(Math.random() * list.length);
-            let finalRewardOutput = list[randomIndex];
-            setFinalReward(finalRewardOutput);
-        }
-    }; //append this to the function that says that if coding number is > 1, then move on to reward output
-
 
     const decrementCount = () => {
         setCount(prevCount => prevCount - 1) /*prevCount allows you to take prev count and  minus by one as oppoed to count - 1 where count is the number when we render the function, it doesn't change in the function like with prevCount*/
@@ -35,9 +28,15 @@ function Form() {
         setCount(prevCount => prevCount + 1)
     }
 
-    const showRewardOrNot = () => {
+    /*const randomReward = () => {
+
+    };*/ //append this to the function that says that if coding number is > 1, then move on to reward output
+
+    const alertOrOutput = () => {
         if (count < 1) {
             alert("YOU NEED TO STUDY MORE!")
+        } else {
+            setPage(2);
         }
     };
 
@@ -49,7 +48,6 @@ function Form() {
                 rewards={rewards}
                 setRewards={setRewards}
                 list={list}
-                setList={setList}
                 handleSubmit={handleSubmit}
             />
         } else if (page === 1) {
@@ -57,10 +55,10 @@ function Form() {
                 decrementCount={decrementCount}
                 count={count}
                 incrementCount={incrementCount}
+                alertOrOutput={alertOrOutput}
             />
         } else {
             return <RewardOutput
-                rewards={rewards}
                 list={list}
                 finalReward={finalReward}
             />
