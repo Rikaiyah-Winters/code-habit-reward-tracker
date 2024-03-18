@@ -12,6 +12,7 @@ function RewardInput({ rewards, setRewards, list, handleSubmit }) {
                     onChange={(e) => setRewards(e.target.value)} />
                 <button onClick={handleSubmit} disabled={list.length > 2}>Submit Reward Idea</button>
             </form>
+            <p>{}</p>
         </div>
     )
 }

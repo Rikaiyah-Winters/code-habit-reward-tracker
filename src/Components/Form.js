@@ -4,11 +4,11 @@ import HoursCoding from './HoursCoding';
 import RewardOutput from './RewardOutput'
 
 function Form() {
+
     const [count, setCount] = useState(1);
     const [page, setPage] = useState(0);
     const [rewards, setRewards] = useState("");
     const [list, setList] = useState([]);
-    const [finalReward, setFinalReward] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +18,7 @@ function Form() {
             setRewards("");
         }
     };
-
+    
     const decrementCount = () => {
         setCount(prevCount => prevCount - 1) /*prevCount allows you to take prev count and  minus by one as oppoed to count - 1 where count is the number when we render the function, it doesn't change in the function like with prevCount*/
 
@@ -27,10 +27,7 @@ function Form() {
     const incrementCount = () => {
         setCount(prevCount => prevCount + 1)
     }
-
-    /*const randomReward = () => {
-
-    };*/ //append this to the function that says that if coding number is > 1, then move on to reward output
+    //append this to the function that says that if coding number is > 1, then move on to reward output
 
     const alertOrOutput = () => {
         if (count < 1) {
@@ -60,7 +57,6 @@ function Form() {
         } else {
             return <RewardOutput
                 list={list}
-                finalReward={finalReward}
             />
         }
     };
