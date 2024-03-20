@@ -18,7 +18,7 @@ function Form() {
             setRewards("");
         }
     };
-    
+
     const decrementCount = () => {
         setCount(prevCount => prevCount - 1) /*prevCount allows you to take prev count and  minus by one as oppoed to count - 1 where count is the number when we render the function, it doesn't change in the function like with prevCount*/
 
@@ -46,6 +46,7 @@ function Form() {
                 setRewards={setRewards}
                 list={list}
                 handleSubmit={handleSubmit}
+                setPage={setPage}
             />
         } else if (page === 1) {
             return <HoursCoding
@@ -69,12 +70,12 @@ function Form() {
             </div>
             <div className='body'>{pageDisplay()}</div>
             <div className='footer'>
-                <button
+                {/*<button
                     disabled={page === 0}
                     onClick={() => { setPage((currPage) => currPage - 1) }}>
                     Prev
-                </button>
-                <button
+                </button>*/}
+                {/*<button
                     onClick={() => {
                         if (page === FormTitles.length - 1) {
                             alert("FORM SUBMITTED");
@@ -84,7 +85,7 @@ function Form() {
                     }}
                 >
                     {page === FormTitles.length - 1 ? "Submit" : "Next"}
-                </button>
+                </button>*/}
                 {/*If you have a FUNCTION INSIDE ONCLICK, it is set up like: () => {change of state - goes from current # to current + 1}*/}
             </div>
         </div>

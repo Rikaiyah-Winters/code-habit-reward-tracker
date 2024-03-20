@@ -1,6 +1,15 @@
 .App {
   text-align: center;
-  background: #023e8a;
+  height: 600px;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+.material-reward {
+  width: 85%;
 }
 
 .reward-input {

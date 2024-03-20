@@ -1,20 +1,29 @@
 import React from 'react';
 
-function RewardInput({ rewards, setRewards, list, handleSubmit }) {
+function RewardInput({ rewards, setRewards, list, handleSubmit, setPage }) {
 
     return (
         <div className='reward-input'>
-            <h1>Please enter 3 rewards you would like to give yourself with for coding.</h1>
+            <h1>Please enter 3 things you would like to reward yourself with for coding.</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     className='material-reward'
                     value={rewards}
                     onChange={(e) => setRewards(e.target.value)} />
-                <button onClick={handleSubmit} disabled={list.length > 2}>Submit Reward Idea</button>
+                <button
+                    onClick={(e) => {
+                        if (list.length < 3) {
+                            handleSubmit(e)
+                        } else {
+                            setPage((currPage) => currPage + 1);
+                        }
+                    }
+                    }
+
+                >Submit Reward Ideas</button>
             </form>
-            <p>{}</p>
         </div>
     )
 }
-//Figure out 
+
 export default RewardInput;
