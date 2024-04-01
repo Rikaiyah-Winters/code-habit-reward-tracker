@@ -20,15 +20,14 @@ function Form() {
     };
 
     const decrementCount = () => {
-        setCount(prevCount => prevCount - 1) /*prevCount allows you to take prev count and  minus by one as oppoed to count - 1 where count is the number when we render the function, it doesn't change in the function like with prevCount*/
-
+        setCount(prevCount => prevCount - 1) 
+        /*prevCount allows you to take prev count and  minus by one as oppoed to count - 1 where count is the number when we render the function, it doesn't change in the function like with prevCount*/
     };
 
     const incrementCount = () => {
         setCount(prevCount => prevCount + 1)
     }
-    //append this to the function that says that if coding number is > 1, then move on to reward output
-
+    
     const alertOrOutput = () => {
         if (count < 1) {
             alert("YOU NEED TO STUDY MORE!")
@@ -69,25 +68,6 @@ function Form() {
                 <h1>{FormTitles[page]}</h1>
             </div>
             <div className='body'>{pageDisplay()}</div>
-            <div className='footer'>
-                {/*<button
-                    disabled={page === 0}
-                    onClick={() => { setPage((currPage) => currPage - 1) }}>
-                    Prev
-                </button>*/}
-                {/*<button
-                    onClick={() => {
-                        if (page === FormTitles.length - 1) {
-                            alert("FORM SUBMITTED");
-                        } else {
-                            setPage((currPage) => currPage + 1);
-                        }
-                    }}
-                >
-                    {page === FormTitles.length - 1 ? "Submit" : "Next"}
-                </button>*/}
-                {/*If you have a FUNCTION INSIDE ONCLICK, it is set up like: () => {change of state - goes from current # to current + 1}*/}
-            </div>
         </div>
     );
 }

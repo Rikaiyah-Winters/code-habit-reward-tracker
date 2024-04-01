@@ -7,7 +7,7 @@ function RewardOutput({ list, finalReward }) {
                 list.map((a) => 
 
                 <div>
-                    <li>{a.rewards}</li> {/*need to add an index*/}
+                    <li>{a.rewards}</li>
                 </div>
                 
                 )

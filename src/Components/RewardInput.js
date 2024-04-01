@@ -11,14 +11,10 @@ function RewardInput({ rewards, setRewards, list, handleSubmit, setPage }) {
                     value={rewards}
                     onChange={(e) => setRewards(e.target.value)} />
                 <button
-                    onClick={(e) => {
-                        if (list.length < 3) {
-                            handleSubmit(e)
-                        } else {
-                            setPage((currPage) => currPage + 1);
-                        }
+                    onClick={() => {
+                        setPage((currPage) => currPage + 1);
                     }
-                    }
+                }
 
                 >Submit Reward Ideas</button>
             </form>
