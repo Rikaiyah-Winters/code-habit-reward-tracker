@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 function RewardOutput({ list, finalReward }) {
     return (
@@ -18,4 +18,4 @@ function RewardOutput({ list, finalReward }) {
     )
 }
 
-export default RewardOutput;
+export default RewardOutput;*/
