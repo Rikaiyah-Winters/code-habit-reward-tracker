@@ -4,7 +4,7 @@ function RewardInput({ rewards, setRewards, list, handleSubmit, setPage }) {
 
     return (
         <div className='reward-input'>
-            <h1>Please make a list of things you'd like to reward yourself with for coding.</h1>
+            <h1>Please make a list of things you would like to reward yourself with for coding.</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     className='material-reward'
