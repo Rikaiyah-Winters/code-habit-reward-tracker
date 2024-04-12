@@ -61,3 +61,10 @@ input {
   margin: 20px 2px;
   width: 80%;
 }
+
+li {
+  font-family: 'Clarendon';
+  font-size: 1.5em;
+  list-style-type: none;
+  margin: 10px;
+}

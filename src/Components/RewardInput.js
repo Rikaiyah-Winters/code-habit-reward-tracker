@@ -13,12 +13,12 @@ function RewardInput({ rewards, setRewards, list, handleSubmit, setPage }) {
                 <button onClick={handleSubmit}>Submit Reward Ideas</button>
             </form>
             {
-                list.map((a) => 
+                list.map((a) =>
 
-                <div>
-                    <li>{a.rewards}</li>
-                </div>
-                
+                    <div>
+                        <li>{a.rewards}</li>
+                    </div>
+
                 )
 
             }
